@@ -7,13 +7,11 @@
 """Extractors for https://www.grajapa.shueisha.co.jp/"""
 
 from .common import Extractor, Message
-from .. import text, util
+from .. import text
 
 class GrajapaExtractor(Extractor):
     BASE_PATTERN  = r"(?:https?://)?(?:www\.)?grajapa\.shueisha\.co\.jp"
-    SPECIAL_PATTERN = BASE_PATTERN + (r"/plus/special/archives/(\d+)/chapter(\d)\.html"
     SPECIAL_PATTERN = BASE_PATTERN + r"/plus/special/archives/\d+/contents/images/chapter(\d)/(\d+)-chapter(\d)-[\w.]+"
-    example = "https://www.grajapa.shueisha.co.jp/plus/special/archives/239/chapter1.html"
     example = "https://www.grajapa.shueisha.co.jp/plus/special/archives/239/contents/images/chapter2/001-chapter2-hongo_yuzuha.jpg"
 
 def images(self, page):
